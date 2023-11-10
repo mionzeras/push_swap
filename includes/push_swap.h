@@ -6,7 +6,7 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 14:14:06 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/11/08 14:32:07 by gcampos-         ###   ########.fr       */
+/*   Updated: 2023/11/10 18:38:16 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,8 @@ typedef struct s_stack_node
 
 // Handle input
 char	**ft_split(char const *s, char c);
+
+void	check_args(char **argv);
+int	is_duplicate(int nb1, int nb2);
 
 #endif
