@@ -6,7 +6,7 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 14:14:06 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/11/10 18:38:16 by gcampos-         ###   ########.fr       */
+/*   Updated: 2023/11/14 16:59:33 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdbool.h>
 # include <limits.h>
 # include <stdio.h>
+# include <stdlib.h>
 
 typedef struct s_stack_node
 {
@@ -31,10 +32,11 @@ typedef struct s_stack_node
 	struct s_stack_node		*target_node;
 }	t_stack;
 
-// Handle input
-char	**ft_split(char const *s, char c);
+// Check input
+int	is_numbers(char *num);
+int	is_duplicated(char **argv);
+int	check_args(char **argv);
 
-void	check_args(char **argv);
-int	is_duplicate(int nb1, int nb2);
-
+// Utils
+int	ft_atoi(const char *str);
 #endif

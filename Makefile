@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    MAKEFILE                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 13:58:26 by gcampos-          #+#    #+#              #
-#    Updated: 2023/11/08 14:19:26 by gcampos-         ###   ########.fr        #
+#    Updated: 2023/11/14 17:02:38 by gcampos-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,10 +15,10 @@ NAME = push_swap
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -g
 RM = rm -f
-INCLUDE = -I .
+INCLUDE = -I includes
 
 #FILES
-SRCS = src/push_swap.c src/utils.c
+SRCS = src/main.c src/utils.c src/check_input.c
 OBJS = ${SRCS:.c=.o}
 
 
