@@ -6,7 +6,7 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 18:06:40 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/11/14 16:19:41 by gcampos-         ###   ########.fr       */
+/*   Updated: 2023/11/15 15:10:47 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	is_numbers(char *num)
 	}
 	while (num[i])
 	{
-		if (num[i] < '0' && num[i] > '9')
+		if (num[i] < '0' || num[i] > '9')
 			return (0);
 		i++;	
 	}
@@ -47,7 +47,7 @@ int	is_duplicated(char **argv)
 		{
 			if (ft_atoi(argv[j]) == temp)
 			{
-				printf("duplicate number");
+				printf("duplicated number");
 				return (1);
 			}
 			j++;

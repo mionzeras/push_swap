@@ -6,28 +6,22 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 17:25:01 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/11/14 17:54:36 by gcampos-         ###   ########.fr       */
+/*   Updated: 2023/11/15 16:39:56 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push.swap"
+#include "push_swap.h"
 
 t_stack	*newstack(int nb)
 {
 	t_stack	*new;
 
-	new = (t_stack *)malloc(sizeof(t_stack));
+	new = malloc(sizeof(t_stack));
 	if (!new)
 		return (NULL);
 	new->value = nb;
-	new->current_position = -1;
-	new->index = 0;
-	new->push_cost = 0;
-	new->above_median = false;
-	new->cheapest = false;
+	new->index = -1;
 	new->next = NULL;
-	new->prev = NULL;
-	new->target_node = NULL;
 	return (new);
 }
 
@@ -50,7 +44,7 @@ void	stack_add_last(t_stack **stack, t_stack *new)
 	}
 }
 
-t_stack	*create_stack(int argc, char **argv);
+t_stack	*create_stack(int argc, char **argv)
 {
 	t_stack	*sa;
 	long int	nb;

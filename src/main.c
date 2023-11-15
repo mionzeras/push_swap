@@ -6,7 +6,7 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 15:00:22 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/11/14 17:29:19 by gcampos-         ###   ########.fr       */
+/*   Updated: 2023/11/15 15:01:20 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int main(int argc, char **argv)
 {
-	t_stack	**stack_a;
-	t_stack	**stack_b;
-	int		size;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+	//int		size;
 	
 	if (argc < 2)
 		return (0);

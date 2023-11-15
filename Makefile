@@ -6,7 +6,7 @@
 #    By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 13:58:26 by gcampos-          #+#    #+#              #
-#    Updated: 2023/11/14 17:02:38 by gcampos-         ###   ########.fr        #
+#    Updated: 2023/11/15 15:02:26 by gcampos-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ RM = rm -f
 INCLUDE = -I includes
 
 #FILES
-SRCS = src/main.c src/utils.c src/check_input.c
+SRCS = src/main.c src/utils.c src/check_input.c src/init_stacks.c
 OBJS = ${SRCS:.c=.o}
 
 
