@@ -6,7 +6,7 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 14:14:06 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/11/14 16:59:33 by gcampos-         ###   ########.fr       */
+/*   Updated: 2023/11/14 17:53:43 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,11 @@ typedef struct s_stack_node
 int	is_numbers(char *num);
 int	is_duplicated(char **argv);
 int	check_args(char **argv);
+
+// Creating stack
+t_stack	*newstack(void *content);
+void	stack_add_last(t_stack **stack, t_stack *new);
+t_stack	*create_stack(int argc, char **argv);
 
 // Utils
 int	ft_atoi(const char *str);

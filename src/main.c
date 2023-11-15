@@ -6,7 +6,7 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 15:00:22 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/11/14 16:21:31 by gcampos-         ###   ########.fr       */
+/*   Updated: 2023/11/14 17:29:19 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,16 @@
 
 int main(int argc, char **argv)
 {
+	t_stack	**stack_a;
+	t_stack	**stack_b;
+	int		size;
+	
 	if (argc < 2)
 		return (0);
-	check_args(argv);
+	if (!check_args(argv))
+		exit_err(NULL, NULL);
+	stack_a = create_stack(argc, argv);
+	stack_b = NULL;
+	
 	return (0);
 }
