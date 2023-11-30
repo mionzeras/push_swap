@@ -6,7 +6,7 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 11:29:46 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/11/30 18:38:24 by gcampos-         ###   ########.fr       */
+/*   Updated: 2023/11/30 19:17:32 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 void	sorting_test(t_stack **a, t_stack **b)
 {
-	
+	free_stack(a);
+	free_stack(b);
+	exit(0);
 }

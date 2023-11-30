@@ -6,7 +6,7 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 17:25:01 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/11/30 18:12:27 by gcampos-         ###   ########.fr       */
+/*   Updated: 2023/11/30 19:29:54 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,23 @@ void	index_stack(t_stack **stack)
 
 	index = 0;
 	temp = *stack;
-		while (temp)
-		{ 
-			if (temp->index == -1)
+	while (temp)
+	{
+		if (temp->index == -1)
+		{
+			min = is_min(temp);
+			if (temp->value == min && temp->index == -1)
 			{
-				min = is_min(temp);
-				if (temp->value == min && temp->index == -1)
-				{
-					temp->index = index;
-					index++;
-					temp = *stack;
-				}
-				else
-					temp = temp->next;
+				temp->index = index;
+				index++;
+				temp = *stack;
 			}
 			else
 				temp = temp->next;
 		}
+		else
+			temp = temp->next;
+	}
 }
 
 t_stack	*newstack(int nb)
@@ -55,7 +55,7 @@ t_stack	*newstack(int nb)
 void	stack_add_last(t_stack **stack, t_stack *new)
 {
 	t_stack	*last;
-	
+
 	if (!new)
 		return ;
 	if (!*stack)
@@ -73,7 +73,7 @@ void	stack_add_last(t_stack **stack, t_stack *new)
 
 t_stack	*create_stack(int argc, char **argv)
 {
-	t_stack	*sa;
+	t_stack		*sa;
 	long int	nb;
 	int			i;
 

@@ -6,7 +6,7 @@
 #    By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 13:58:26 by gcampos-          #+#    #+#              #
-#    Updated: 2023/11/30 18:57:15 by gcampos-         ###   ########.fr        #
+#    Updated: 2023/11/30 19:04:16 by gcampos-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,10 +18,10 @@ INCLUDE = -I includes
 
 #FILES
 SRCS =	src/algorithm.c \
-		src/init_stack.c \
+		src/init_stacks.c \
 		src/push_swap.c \
 		src/stack_utils.c \
-		src/utils.c \
+		src/utils.c
 OBJS = ${SRCS:.c=.o}
 
 .c.o:
