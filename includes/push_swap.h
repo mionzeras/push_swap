@@ -6,7 +6,7 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 14:14:06 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/11/15 16:39:20 by gcampos-         ###   ########.fr       */
+/*   Updated: 2023/11/30 17:12:09 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,23 @@ typedef struct s_stack_node
 	struct s_stack_node		*next;
 }	t_stack;
 
-// Check input
-int	is_numbers(char *num);
-int	is_duplicated(char **argv);
-int	check_args(char **argv);
+// check_input.c
+int		is_numbers(char *num);
+int		is_duplicated(char **argv);
+int		check_args(char **argv);
 
-// Creating stack
-t_stack	*newstack(int nb);
+// init_stack.c
 void	stack_add_last(t_stack **stack, t_stack *new);
+void	index_stack(t_stack **stack);
+t_stack	*newstack(int nb);
 t_stack	*create_stack(int argc, char **argv);
 
-// Utils
+// stack_utils.c
+int		is_min(t_stack *stack);
+int		stack_len(t_stack *stack);
+
+// utils.c
 int		ft_atoi(const char *str);
 void	exit_err(t_stack **a, t_stack **b);
+void	free_stack(t_stack **stack);
 #endif

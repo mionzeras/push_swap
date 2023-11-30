@@ -6,11 +6,38 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 17:25:01 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/11/15 16:39:56 by gcampos-         ###   ########.fr       */
+/*   Updated: 2023/11/30 18:12:27 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	index_stack(t_stack **stack)
+{
+	t_stack	*temp;
+	int		min;
+	int		index;
+
+	index = 0;
+	temp = *stack;
+		while (temp)
+		{ 
+			if (temp->index == -1)
+			{
+				min = is_min(temp);
+				if (temp->value == min && temp->index == -1)
+				{
+					temp->index = index;
+					index++;
+					temp = *stack;
+				}
+				else
+					temp = temp->next;
+			}
+			else
+				temp = temp->next;
+		}
+}
 
 t_stack	*newstack(int nb)
 {
@@ -64,5 +91,6 @@ t_stack	*create_stack(int argc, char **argv)
 			stack_add_last(&sa, newstack((int)nb));
 		i++;
 	}
+	index_stack(&sa);
 	return (sa);
 }

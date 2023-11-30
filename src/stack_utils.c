@@ -1,31 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/22 10:25:50 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/11/27 13:32:53 by gcampos-         ###   ########.fr       */
+/*   Created: 2023/11/30 16:01:38 by gcampos-          #+#    #+#             */
+/*   Updated: 2023/11/30 17:53:14 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+int	is_min(t_stack *stack)
 {
-	t_stack	*a;
-	//t_stack	*b;
-	
-	if (ac < 2)
-		return (0);
-	if (!check_args(av))
-		exit_err(NULL, NULL);
-	a = create_stack(ac, av);
-	//b = NULL;
-	while (a)
+	int	min;
+
+	min = stack->value;
+	while (stack)
 	{
-		printf("%d\n", a->value);
-		a = a->next;
+		if (stack->value < min && stack->index == -1)
+			min = stack->value;
+		stack = stack->next;
 	}
+	return (min);
+}
+
+int	stack_len(t_stack *stack)
+{
+	int	len;
+
+	len = 0;
+	while (stack)
+	{
+		len++;
+		stack = stack->next;
+	}
+	return (len);
 }
