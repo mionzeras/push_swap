@@ -6,13 +6,13 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 11:29:46 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/11/22 11:30:04 by gcampos-         ###   ########.fr       */
+/*   Updated: 2023/11/30 18:38:24 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	algorithm(t_stack **a, t_stack **b)
+void	sorting_test(t_stack **a, t_stack **b)
 {
 	
 }

@@ -6,11 +6,36 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:01:38 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/11/30 17:53:14 by gcampos-         ###   ########.fr       */
+/*   Updated: 2023/11/30 18:54:38 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	exit_err(t_stack **a, t_stack **b)
+{
+	if (!a || *a)
+		free_stack(a);
+	if (!b || *b)
+		free_stack(b);
+	write(2, "Error\n", 6);
+	exit (1);
+}
+
+void	free_stack(t_stack **stack)
+{
+	t_stack	*temp;
+
+	if (!stack || !(*stack))
+		return ;
+	while (*stack)
+	{
+		temp = (*stack)->next;
+		free(*stack);
+		*stack = temp;
+	}
+	*stack = NULL;
+}
 
 int	is_min(t_stack *stack)
 {
