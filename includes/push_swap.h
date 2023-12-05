@@ -6,7 +6,7 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 14:14:06 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/12/05 14:38:14 by gcampos-         ###   ########.fr       */
+/*   Updated: 2023/12/05 15:16:47 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,20 @@ void	stack_add_last(t_stack **stack, t_stack *new);
 t_stack	*newstack(int nb);
 t_stack	*create_stack(int argc, char **argv);
 
+// move_functions.c
+void	push(t_stack **from, t_stack **to);
+void	swap(t_stack **stack);
+void	rotate(t_stack **stack);
+void	reverse(t_stack **stack);
+
+// moves.c
+void	swap_move(t_stack **sa, t_stack **sb, char *choice);
+void	rotate_move(t_stack **sa, t_stack **sb, char *choice);
+void	push_move(t_stack **sa, t_stack **sb, char *choice);
+
 // push_swap.c
 int		is_sorted(t_stack *stack);
 int		check_args(char **argv);
-
 
 // stack_utils.c
 void	exit_err(t_stack **a, t_stack **b);
@@ -52,6 +62,5 @@ int		is_duplicated(char **argv);
 int		ft_atoi(const char *str);
 void	ft_putstr(char *c);
 int		ft_strcmp(char *s1, char *s2);
-
 
 #endif

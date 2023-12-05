@@ -6,7 +6,7 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:09:16 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/12/05 14:39:16 by gcampos-         ###   ########.fr       */
+/*   Updated: 2023/12/05 15:14:18 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	push(t_stack **from, t_stack **to)
 
 void	swap(t_stack **stack)
 {
-	int temp;
+	int	temp;
 
 	if (!*stack || !(*stack)->next)
 		return ;
@@ -54,9 +54,9 @@ void	rotate(t_stack **stack)
 
 void	reverse(t_stack **stack)
 {
-	t_stack *hold_top;
-	t_stack *hold_bottom;
-	t_stack *hold_last;
+	t_stack	*hold_top;
+	t_stack	*hold_bottom;
+	t_stack	*hold_last;
 
 	hold_top = *stack;
 	hold_bottom = *stack;
