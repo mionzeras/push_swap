@@ -6,7 +6,7 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 13:47:28 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/11/30 20:07:42 by gcampos-         ###   ########.fr       */
+/*   Updated: 2023/12/05 14:39:35 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,13 +81,6 @@ int	ft_atoi(const char *str)
 	return (result * sign);
 }
 
-int	absolute_nb(int nb)
-{
-	if (nb < 0)
-		return (-nb);
-	return (nb);
-}
-
 void	ft_putstr(char *c)
 {
 	while (*c)
@@ -95,4 +88,24 @@ void	ft_putstr(char *c)
 		write(1, &*c, 1);
 		c++;
 	}
+}
+
+int	ft_strcmp(char *s1, char *s2)
+{
+	if (*s1 == '+')
+	{
+		if (*s2 != '+')
+			s1++;
+	}
+	else
+	{
+		if (*s2 == '+')
+			s2++;
+	}
+	while (*s1 == *s2 && *s1)
+	{
+		s1++;
+		s2++;
+	}
+	return (*s1 - *s2);
 }

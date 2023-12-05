@@ -6,7 +6,7 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 14:14:06 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/11/30 19:34:59 by gcampos-         ###   ########.fr       */
+/*   Updated: 2023/12/05 14:38:14 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,8 @@ int		stack_len(t_stack *stack);
 int		is_numbers(char *num);
 int		is_duplicated(char **argv);
 int		ft_atoi(const char *str);
+void	ft_putstr(char *c);
+int		ft_strcmp(char *s1, char *s2);
+
 
 #endif
