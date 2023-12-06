@@ -6,7 +6,7 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 17:25:01 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/11/30 19:29:54 by gcampos-         ###   ########.fr       */
+/*   Updated: 2023/12/06 15:42:20 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	index_stack(t_stack **stack)
 	int		min;
 	int		index;
 
-	index = 0;
+	index = 1;
 	temp = *stack;
 	while (temp)
 	{

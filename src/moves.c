@@ -6,58 +6,51 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 14:41:15 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/12/06 11:17:58 by gcampos-         ###   ########.fr       */
+/*   Updated: 2023/12/06 15:50:20 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap_move(t_stack **sa, t_stack **sb, char *choice)
+void	swap_move(t_stack **a, t_stack **b, char *choice)
 {
 	if (choice[0] == 's' && choice[1] == 'a')
-		swap(sa);
+		swap(a);
 	else if (choice[0] == 's' && choice[1] == 'b')
-		swap(sb);
+		swap(b);
 	else if (choice[0] == 's' && choice[1] == 's')
 	{
-		swap(sa);
-		swap(sb);
+		swap(a);
+		swap(b);
 	}
 	if (choice[0] == 'p' && choice[1] == 'a')
-		push(sb, sa);
+		push(b, a);
 	else if (choice[0] == 'p' && choice[1] == 'b')
-		push(sa, sb);
+		push(a, b);
 	ft_putstr(choice);
 	ft_putstr("\n");
 }
 
-void	rotate_move(t_stack **sa, t_stack **sb, char *choice)
+void	rotate_move(t_stack **a, t_stack **b, char *choice)
 {
 	if (choice[0] == 'r' && choice[1] == 'a')
-		rotate(sa);
+		rotate(a);
 	else if (choice[0] == 'r' && choice[1] == 'b')
-		rotate(sb);
-	else if (choice[0] == 'r' && choice[1] == 'r')
+		rotate(b);
+	else if (choice[0] == 'r' && choice[1] == 'r' && choice[2] == '\0')
 	{
-		rotate(sa);
-		rotate(sb);
+		rotate(a);
+		rotate(b);
 	}
 	else if (choice[0] == 'r' && choice[1] == 'r' && choice[2] == 'a')
-		reverse(sa);
+		reverse(a);
 	else if (choice[0] == 'r' && choice[1] == 'r' && choice[2] == 'b')
-		reverse(sb);
+		reverse(b);
 	else if (choice[0] == 'r' && choice[1] == 'r' && choice[2] == 'r')
 	{
-		reverse(sa);
-		reverse(sb);
+		reverse(a);
+		reverse(b);
 	}
 	ft_putstr(choice);
 	ft_putstr("\n");
 }
-
-/*void	push_move(t_stack **sa, t_stack **sb, char *choice)
-{
-
-	ft_putstr(choice);
-	ft_putstr("\n");
-}*/

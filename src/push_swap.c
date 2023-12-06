@@ -6,7 +6,7 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 10:25:50 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/12/06 11:24:47 by gcampos-         ###   ########.fr       */
+/*   Updated: 2023/12/06 15:17:09 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,36 +47,15 @@ int	check_args(char **argv)
 
 void	push_swap(t_stack **a, t_stack **b)
 {
-	int	len;
-	int	i;
-	int pushed;
+	int	size;
 
-	i = 0;
-	pushed = 0;
-	len = stack_len(*a);
-	while (i < len)
-	{
-		if ((*a)->index >= len / 2)
-			{
-				swap_move(a, b, "pb");
-				pushed++;
-			}
-		else
-			rotate_move(a, NULL, "ra");
-		i++;
-	}
-	while (pushed--)
-	{
-		swap_move(a, b, "pa");
-	}
-	while (*a)
-	{
-		printf("a: %d\n", (*a)->value);
-		(*a) = (*a)->next;
-	}
-	free_stack(a);
-	free_stack(b);
-	exit(0);
+	size = stack_len(*a);
+	if (size == 2 && !is_sorted(*a))
+		swap_move(a, NULL, "sa");
+	else if (size == 3)
+		small_sort(a);
+	else if (size > 3)
+		complex_sort(a, b);
 }
 
 int	main(int ac, char **av)
@@ -103,7 +82,6 @@ int	main(int ac, char **av)
 		tmp = tmp->next;
 	}
 	push_swap(&stack_a, &stack_b);
-	//sorting_test(&stack_a, &stack_b);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (0);
