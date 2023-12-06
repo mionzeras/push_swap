@@ -6,7 +6,7 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 11:29:46 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/12/05 15:21:48 by gcampos-         ###   ########.fr       */
+/*   Updated: 2023/12/06 11:19:20 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ void	sorting_test(t_stack **a, t_stack **b)
 	while (i < len)
 	{
 		if ((*a)->index > len / 2)
-			push(a, b);
-		//else
-			//rotate_move(a, b, "ra");
+			swap_move(a, b, "pb");
+		else
+			rotate_move(a, NULL, "ra");
 		i++;
 	}
 	while (*a)

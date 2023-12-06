@@ -6,7 +6,7 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 14:14:06 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/12/05 15:16:47 by gcampos-         ###   ########.fr       */
+/*   Updated: 2023/12/06 11:18:07 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,12 @@ void	reverse(t_stack **stack);
 // moves.c
 void	swap_move(t_stack **sa, t_stack **sb, char *choice);
 void	rotate_move(t_stack **sa, t_stack **sb, char *choice);
-void	push_move(t_stack **sa, t_stack **sb, char *choice);
+//void	push_move(t_stack **sa, t_stack **sb, char *choice);
 
 // push_swap.c
 int		is_sorted(t_stack *stack);
 int		check_args(char **argv);
+void	push_swap(t_stack **a, t_stack **b);
 
 // stack_utils.c
 void	exit_err(t_stack **a, t_stack **b);

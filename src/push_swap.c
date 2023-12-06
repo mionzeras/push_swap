@@ -6,7 +6,7 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 10:25:50 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/11/30 19:35:46 by gcampos-         ###   ########.fr       */
+/*   Updated: 2023/12/06 11:24:47 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,45 @@ int	check_args(char **argv)
 	return (1);
 }
 
+void	push_swap(t_stack **a, t_stack **b)
+{
+	int	len;
+	int	i;
+	int pushed;
+
+	i = 0;
+	pushed = 0;
+	len = stack_len(*a);
+	while (i < len)
+	{
+		if ((*a)->index >= len / 2)
+			{
+				swap_move(a, b, "pb");
+				pushed++;
+			}
+		else
+			rotate_move(a, NULL, "ra");
+		i++;
+	}
+	while (pushed--)
+	{
+		swap_move(a, b, "pa");
+	}
+	while (*a)
+	{
+		printf("a: %d\n", (*a)->value);
+		(*a) = (*a)->next;
+	}
+	free_stack(a);
+	free_stack(b);
+	exit(0);
+}
+
 int	main(int ac, char **av)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
+	t_stack	*tmp;
 
 	if (ac < 2)
 		return (0);
@@ -61,12 +96,14 @@ int	main(int ac, char **av)
 		exit (EXIT_SUCCESS);
 	}
 	stack_b = NULL;
-	while (stack_a)
+	tmp = stack_a;
+	while (tmp)
 	{
-		printf("Number %d has index %i\n", stack_a->value, stack_a->index);
-		stack_a = stack_a->next;
+		printf("Number %d has index %i\n", tmp->value, tmp->index);
+		tmp = tmp->next;
 	}
-	sorting_test(&stack_a, &stack_b);
+	push_swap(&stack_a, &stack_b);
+	//sorting_test(&stack_a, &stack_b);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (0);
