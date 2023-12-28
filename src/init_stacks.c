@@ -6,7 +6,7 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 17:25:01 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/12/06 15:42:20 by gcampos-         ###   ########.fr       */
+/*   Updated: 2023/12/28 13:20:14 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,10 @@ t_stack	*newstack(int nb)
 		return (NULL);
 	new->value = nb;
 	new->index = -1;
+	new->position = -1;
+	new->to_top_a = -1;
+	new->to_top_b = -1;
+	new->where_put_a = -1;
 	new->next = NULL;
 	return (new);
 }

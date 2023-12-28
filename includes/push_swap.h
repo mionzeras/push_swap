@@ -6,7 +6,7 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 14:14:06 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/12/06 16:03:59 by gcampos-         ###   ########.fr       */
+/*   Updated: 2023/12/28 13:56:47 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ typedef struct s_stack_node
 {
 	int						value;
 	int						index;
+	int						position;
+	int						to_top_a;
+	int						to_top_b;
+	int						where_put_a;
 	struct s_stack_node		*next;
 }	t_stack;
 
@@ -47,6 +51,12 @@ void	rotate_move(t_stack **a, t_stack **b, char *choice);
 int		is_sorted(t_stack *stack);
 int		check_args(char **argv);
 void	push_swap(t_stack **a, t_stack **b);
+
+// sorting_moves.c
+int		target_a(t_stack **a, int b_index, int max, int a_pos);
+void	stack_position(t_stack **stack);
+void	where_put_a(t_stack **a, t_stack **b);
+void	calculate_to_top(t_stack **a, t_stack **b);
 
 // sorting.c
 void	small_sort(t_stack **stack);

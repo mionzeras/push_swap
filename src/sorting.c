@@ -6,7 +6,7 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 14:46:46 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/12/06 16:07:26 by gcampos-         ###   ########.fr       */
+/*   Updated: 2023/12/28 14:00:39 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,10 @@ void	push_until3(t_stack **a, t_stack **b)
 void	complex_sort(t_stack **a, t_stack **b)
 {
 	push_until3(a, b);
+	while (b)
+	{
+		where_put_a(a, b);
+		calculate_to_top(a, b);
+	}
+	
 }
