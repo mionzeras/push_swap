@@ -6,7 +6,7 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 13:22:15 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/12/28 13:59:23 by gcampos-         ###   ########.fr       */
+/*   Updated: 2023/12/29 09:36:22 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	stack_position(t_stack **stack)
 	}
 }
 
-void	where_put_a(t_stack **a, t_stack **b)
+void	closest_a(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp_b;
 	int		a_pos;

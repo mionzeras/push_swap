@@ -6,7 +6,7 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 14:14:06 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/12/28 13:56:47 by gcampos-         ###   ########.fr       */
+/*   Updated: 2023/12/29 09:38:30 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	push_swap(t_stack **a, t_stack **b);
 // sorting_moves.c
 int		target_a(t_stack **a, int b_index, int max, int a_pos);
 void	stack_position(t_stack **stack);
-void	where_put_a(t_stack **a, t_stack **b);
+void	closest_a(t_stack **a, t_stack **b);
 void	calculate_to_top(t_stack **a, t_stack **b);
 
 // sorting.c
