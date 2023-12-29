@@ -6,7 +6,7 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 14:14:06 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/12/29 10:45:56 by gcampos-         ###   ########.fr       */
+/*   Updated: 2023/12/29 21:17:58 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,13 +59,15 @@ void	closest_a(t_stack **a, t_stack **b);
 void	calculate_to_top(t_stack **a, t_stack **b);
 
 // sorting_moves.c
-void	reverse_both(t_stack **a, t_stack **b, int *cost_a, int *cost_b);
-void	rotate_both(t_stack **a, t_stack **b, int *cost_a, int *cost_b);
-void	rotate_a(t_stack **a, int *cost_a);
-void	rotate_b(t_stack **b, int *cost_b);
+//void	reverse_both(t_stack **a, t_stack **b, int *cost_a, int *cost_b);
+//void	rotate_both(t_stack **a, t_stack **b, int *cost_a, int *cost_b);
+//void	rotate_a(t_stack **a, int *cost_a);
+//void	rotate_b(t_stack **b, int *cost_b);
 void	pushing_to_a(t_stack **a, t_stack **b);
 
 // sorting.c
+int		lower_position(t_stack **a);
+void	last_sort(t_stack **a);
 void	small_sort(t_stack **stack);
 void	push_until3(t_stack **a, t_stack **b);
 void	complex_sort(t_stack **a, t_stack **b);

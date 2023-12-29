@@ -6,11 +6,49 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 14:46:46 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/12/29 09:37:13 by gcampos-         ###   ########.fr       */
+/*   Updated: 2023/12/29 20:49:02 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	lower_position(t_stack **a)
+{
+	t_stack	*tmp_a;
+	int	lower;
+	int	position;
+
+	tmp_a = *a;
+	while (tmp_a)
+	{
+		if (tmp_a->index < lower)
+		{
+			lower = tmp_a->index;
+			position = tmp_a->position;
+		}
+		tmp_a = tmp_a->next;
+	}
+	return (position);
+}
+
+void	last_sort(t_stack **a)
+{
+	int len;
+	int lower;
+
+	len = stack_len(*a);
+	lower = lower_position(a);
+	if (lower > len / 2)
+	{
+		while (lower++ < len)
+			rotate_move(a, NULL, "rra");
+	}
+	else
+	{
+		while (lower--)
+			rotate_move(a, NULL, "ra");
+	}
+}
 
 void	small_sort(t_stack **stack)
 {
@@ -29,28 +67,28 @@ void	small_sort(t_stack **stack)
 
 void	push_until3(t_stack **a, t_stack **b)
 {
-	int	len;
 	int	i;
-	int pushed;
+	int	len;
+	int count;
 
-	len = stack_len(*a);
 	i = 0;
-	pushed = 0;
-	while (i < len)
+	len = stack_len(*a);
+	count = len;
+	while (i < len / 2)
 	{
 		if ((*a)->index <= len / 2)
 			{
 				swap_move(a, b, "pb");
-				pushed++;
+				i++;
+				count--;
 			}
 		else
 			rotate_move(a, NULL, "ra");
-		i++;
 	}
-	while (len - pushed > 3)
+	while (count > 3)
 	{
 		swap_move(a, b, "pb");
-		pushed++;
+		count--;
 	}
 	small_sort(a);
 }
@@ -60,7 +98,11 @@ void	complex_sort(t_stack **a, t_stack **b)
 	while (b)
 	{
 		closest_a(a, b);
+		printf("im here after push_3\n");
 		calculate_to_top(a, b);
+		printf("im here after calculate\n");
+		pushing_to_a(a, b);
 	}
-	
+	if (!is_sorted(*a))
+		last_sort(a);
 }
