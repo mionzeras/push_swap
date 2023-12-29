@@ -6,7 +6,7 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 14:14:06 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/12/29 09:38:30 by gcampos-         ###   ########.fr       */
+/*   Updated: 2023/12/29 10:45:56 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,18 @@ int		is_sorted(t_stack *stack);
 int		check_args(char **argv);
 void	push_swap(t_stack **a, t_stack **b);
 
-// sorting_moves.c
+// sorting_counting.c
 int		target_a(t_stack **a, int b_index, int max, int a_pos);
 void	stack_position(t_stack **stack);
 void	closest_a(t_stack **a, t_stack **b);
 void	calculate_to_top(t_stack **a, t_stack **b);
+
+// sorting_moves.c
+void	reverse_both(t_stack **a, t_stack **b, int *cost_a, int *cost_b);
+void	rotate_both(t_stack **a, t_stack **b, int *cost_a, int *cost_b);
+void	rotate_a(t_stack **a, int *cost_a);
+void	rotate_b(t_stack **b, int *cost_b);
+void	pushing_to_a(t_stack **a, t_stack **b);
 
 // sorting.c
 void	small_sort(t_stack **stack);
@@ -71,6 +78,7 @@ int		max_index(t_stack *stack);
 int		stack_len(t_stack *stack);
 
 // utils.c
+int		absolute(int n);
 int		is_numbers(char *num);
 int		is_duplicated(char **argv);
 int		ft_atoi(const char *str);

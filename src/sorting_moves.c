@@ -5,93 +5,91 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/28 13:22:15 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/12/29 09:36:22 by gcampos-         ###   ########.fr       */
+/*   Created: 2023/12/29 09:58:59 by gcampos-          #+#    #+#             */
+/*   Updated: 2023/12/29 10:45:45 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	target_a(t_stack **a, int b_index, int max, int a_pos)
+void	reverse_both(t_stack **a, t_stack **b, int *cost_a, int *cost_b)
 {
-	t_stack	*tmp_a;
-
-	tmp_a = *a;
-	while (tmp_a)
+	while (*cost_a < 0 && *cost_b < 0)
 	{
-		if (tmp_a->index > b_index && tmp_a->index < max)
+		(*cost_a)++;
+		(*cost_b)++;
+		rotate_move(a, b, "rrr");
+	}
+}
+
+void	rotate_both(t_stack **a, t_stack **b, int *cost_a, int *cost_b)
+{
+	while (*cost_a > 0 && *cost_b > 0)
+	{
+		(*cost_a)--;
+		(*cost_b)--;
+		rotate_move(a, b, "rr");
+	}
+}
+
+void	rotate_a(t_stack **a, int *cost_a)
+{
+	while (*cost_a)
+	{
+		if (*cost_a < 0)
 		{
-			max = tmp_a->index;
-			a_pos = tmp_a->position;
+			(*cost_a)++;
+			rotate_move(a, NULL, "rra");
 		}
-		tmp_a = tmp_a->next;
-	}
-	if (max != INT_MAX)
-		return (a_pos);
-	tmp_a = *a;
-	while (tmp_a)
-	{
-		if (tmp_a->index < max)
+		else if (*cost_a > 0)
 		{
-			max = tmp_a->index;
-			a_pos = tmp_a->position;
+			(cost_a)--;
+			rotate_move(a, NULL, "ra");
 		}
-		tmp_a = tmp_a->next;
 	}
-	return (a_pos);
 }
 
-void	stack_position(t_stack **stack)
+void	rotate_b(t_stack **b, int *cost_b)
 {
-	t_stack	*temp;
-	int		i;
-
-	i = 0;
-	temp = *stack;
-	while (temp)
+	while (*cost_b)
 	{
-		temp->position = i;
-		temp = temp->next;
-		i++;
+		if (*cost_b < 0)
+		{
+			(*cost_b)++;
+			rotate_move(NULL, b, "rrb");
+		}
+		else if (*cost_b > 0)
+		{
+			(cost_b)--;
+			rotate_move(NULL, b, "rb");
+		}
 	}
 }
 
-void	closest_a(t_stack **a, t_stack **b)
+void	pushing_to_a(t_stack **a, t_stack **b)
 {
-	t_stack	*tmp_b;
-	int		a_pos;
-
-	tmp_b = *b;
-	stack_position(a);
-	stack_position(b);
-	a_pos = 0;
-	while (tmp_b)
-	{
-		a_pos = target_a(a, tmp_b->index, INT_MAX, a_pos);
-		tmp_b->where_put_a = a_pos;
-		tmp_b = tmp_b->next;
-	}
-}
-
-void	calculate_to_top(t_stack **a, t_stack **b)
-{
-	t_stack	*sa;
 	t_stack	*sb;
-	int		size_a;
-	int		size_b;
+	int		to_top_a;
+	int		to_top_b;
+	int		cheapest;
 
-	sa = *a;
 	sb = *b;
-	size_a = stack_len(*a);
-	size_b = stack_len(*b);
-	while (b)
+	cheapest = INT_MAX;
+	while (sb)
 	{
-		sb->to_top_b = sb->position;
-		if (sb->position > size_b / 2)
-			sb->to_top_b = (size_b - sb->position) * -1;
-		sb->to_top_a = sb->where_put_a;
-		if (sb->where_put_a > size_a / 2)
-			sb->to_top_a = (size_a - sb->where_put_a) * -1;
+		if (absolute(sb->to_top_a) + absolute(sb->to_top_b) < absolute(cheapest))
+		{
+			cheapest = absolute(sb->to_top_a) + absolute(sb->to_top_b);
+			to_top_a = sb->to_top_a;
+			to_top_b = sb->to_top_b;
+		}
 		sb = sb->next;
 	}
+	if (to_top_a < 0 && to_top_b < 0)
+		reverse_both(a, b, &to_top_a, &to_top_b);
+	else if (to_top_a > 0 && to_top_b > 0)
+		rotate_both(a, b, &to_top_a, &to_top_b);
+	rotate_a(a, &to_top_a);
+	rotate_b(b, &to_top_b);
+	swap_move(a, b, "pa");
 }

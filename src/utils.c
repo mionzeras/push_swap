@@ -6,11 +6,18 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 13:47:28 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/12/06 16:03:52 by gcampos-         ###   ########.fr       */
+/*   Updated: 2023/12/29 10:05:22 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	absolute(int n)
+{
+	if (n < 0)
+		return (-n);
+	return (n);
+}
 
 int	is_numbers(char *num)
 {
