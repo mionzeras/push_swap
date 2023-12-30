@@ -6,7 +6,7 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 13:22:15 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/12/29 21:20:11 by gcampos-         ###   ########.fr       */
+/*   Updated: 2023/12/30 10:04:38 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,9 +82,9 @@ void	calculate_to_top(t_stack **a, t_stack **b)
 
 	sa = *a;
 	sb = *b;
+	
 	size_a = stack_len(sa);
 	size_b = stack_len(sb);
-	printf("reach here\n");
 	while (sb)
 	{
 		sb->to_top_b = sb->position;

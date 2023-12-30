@@ -6,7 +6,7 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 14:46:46 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/12/29 20:49:02 by gcampos-         ###   ########.fr       */
+/*   Updated: 2023/12/30 10:25:11 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@ int	lower_position(t_stack **a)
 	int	position;
 
 	tmp_a = *a;
+	lower = INT_MAX;
+	stack_position(a);
+	position = tmp_a->position;
 	while (tmp_a)
 	{
 		if (tmp_a->index < lower)
@@ -95,12 +98,10 @@ void	push_until3(t_stack **a, t_stack **b)
 void	complex_sort(t_stack **a, t_stack **b)
 {
 	push_until3(a, b);
-	while (b)
+	while (*b)
 	{
 		closest_a(a, b);
-		printf("im here after push_3\n");
 		calculate_to_top(a, b);
-		printf("im here after calculate\n");
 		pushing_to_a(a, b);
 	}
 	if (!is_sorted(*a))
