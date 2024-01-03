@@ -6,7 +6,7 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 14:46:46 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/12/30 10:25:11 by gcampos-         ###   ########.fr       */
+/*   Updated: 2024/01/03 14:36:16 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int	lower_position(t_stack **a)
 {
 	t_stack	*tmp_a;
-	int	lower;
-	int	position;
+	int		lower;
+	int		position;
 
 	tmp_a = *a;
 	lower = INT_MAX;
@@ -36,8 +36,8 @@ int	lower_position(t_stack **a)
 
 void	last_sort(t_stack **a)
 {
-	int len;
-	int lower;
+	int	len;
+	int	lower;
 
 	len = stack_len(*a);
 	lower = lower_position(a);
@@ -57,7 +57,7 @@ void	small_sort(t_stack **stack)
 {
 	int	max;
 
-	if(is_sorted(*stack))
+	if (is_sorted(*stack))
 		return ;
 	max = max_index(*stack);
 	if ((*stack)->index == max)
@@ -72,7 +72,7 @@ void	push_until3(t_stack **a, t_stack **b)
 {
 	int	i;
 	int	len;
-	int count;
+	int	count;
 
 	i = 0;
 	len = stack_len(*a);
@@ -80,11 +80,11 @@ void	push_until3(t_stack **a, t_stack **b)
 	while (i < len / 2)
 	{
 		if ((*a)->index <= len / 2)
-			{
-				swap_move(a, b, "pb");
-				i++;
-				count--;
-			}
+		{
+			swap_move(a, b, "pb");
+			i++;
+			count--;
+		}
 		else
 			rotate_move(a, NULL, "ra");
 	}
@@ -95,6 +95,7 @@ void	push_until3(t_stack **a, t_stack **b)
 	}
 	small_sort(a);
 }
+
 void	complex_sort(t_stack **a, t_stack **b)
 {
 	push_until3(a, b);

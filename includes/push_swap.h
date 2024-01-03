@@ -6,7 +6,7 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 14:14:06 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/12/30 10:24:23 by gcampos-         ###   ########.fr       */
+/*   Updated: 2024/01/03 15:28:08 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,59 +31,58 @@ typedef struct s_stack_node
 }	t_stack;
 
 // init_stack.c
-void	index_stack(t_stack **stack);
-void	stack_add_last(t_stack **stack, t_stack *new);
-t_stack	*newstack(int nb);
-t_stack	*create_stack(int argc, char **argv);
+void		index_stack(t_stack **stack);
+void		stack_add_last(t_stack **stack, t_stack *new);
+t_stack		*newstack(int nb);
+t_stack		*create_stack(int argc, char **argv);
 
 // move_functions.c
-void	push(t_stack **from, t_stack **to);
-void	swap(t_stack **stack);
-void	rotate(t_stack **stack);
-void	reverse(t_stack **stack);
+void		push(t_stack **from, t_stack **to);
+void		swap(t_stack **stack);
+void		rotate(t_stack **stack);
+void		reverse(t_stack **stack);
 
 // moves.c
-void	swap_move(t_stack **a, t_stack **b, char *choice);
-void	rotate_move(t_stack **a, t_stack **b, char *choice);
-
+void		swap_move(t_stack **a, t_stack **b, char *choice);
+void		rotate_move(t_stack **a, t_stack **b, char *choice);
 
 // push_swap.c
-int		is_sorted(t_stack *stack);
-int		check_args(char **argv);
-void	push_swap(t_stack **a, t_stack **b);
+int			is_sorted(t_stack *stack);
+int			check_args(char **argv);
+void		push_swap(t_stack **a, t_stack **b);
 
 // sorting_counting.c
-int		target_a(t_stack **a, int b_index, int max, int a_pos);
-void	stack_position(t_stack **stack);
-void	closest_a(t_stack **a, t_stack **b);
-void	calculate_to_top(t_stack **a, t_stack **b);
+int			target_a(t_stack **a, int b_index, int max, int a_pos);
+void		stack_position(t_stack **stack);
+void		closest_a(t_stack **a, t_stack **b);
+void		calculate_to_top(t_stack **a, t_stack **b);
 
 // sorting_moves.c
-void	reverse_both(t_stack **a, t_stack **b, int *cost_a, int *cost_b);
-void	rotate_both(t_stack **a, t_stack **b, int *cost_a, int *cost_b);
-void	rotate_a(t_stack **a, int *cost_a);
-void	rotate_b(t_stack **b, int *cost_b);
-void	pushing_to_a(t_stack **a, t_stack **b);
+void		reverse_both(t_stack **a, t_stack **b, int *cost_a, int *cost_b);
+void		rotate_both(t_stack **a, t_stack **b, int *cost_a, int *cost_b);
+void		rotate_a(t_stack **a, int *cost_a);
+void		rotate_b(t_stack **b, int *cost_b);
+void		pushing_to_a(t_stack **a, t_stack **b);
 
 // sorting.c
-int		lower_position(t_stack **a);
-void	last_sort(t_stack **a);
-void	small_sort(t_stack **stack);
-void	push_until3(t_stack **a, t_stack **b);
-void	complex_sort(t_stack **a, t_stack **b);
+int			lower_position(t_stack **a);
+void		last_sort(t_stack **a);
+void		small_sort(t_stack **stack);
+void		push_until3(t_stack **a, t_stack **b);
+void		complex_sort(t_stack **a, t_stack **b);
 
 // stack_utils.c
-void	exit_err(t_stack **a, t_stack **b);
-void	free_stack(t_stack **stack);
-int		is_min(t_stack *stack);
-int		max_index(t_stack *stack);
-int		stack_len(t_stack *stack);
+void		exit_err(t_stack **a, t_stack **b);
+void		free_stack(t_stack **stack);
+int			is_min(t_stack *stack);
+int			max_index(t_stack *stack);
+int			stack_len(t_stack *stack);
 
 // utils.c
-int		absolute(int n);
-int		is_numbers(char *num);
-int		is_duplicated(char **argv);
-int		ft_atoi(const char *str);
-void	ft_putstr(char *c);
+int			absol(int n);
+int			is_numbers(char *num);
+int			is_duplicated(char **argv);
+long int	ft_atoi(const char *str);
+void		ft_putstr(char *c);
 
 #endif

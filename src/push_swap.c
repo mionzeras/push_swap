@@ -6,7 +6,7 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 10:25:50 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/12/06 15:17:09 by gcampos-         ###   ########.fr       */
+/*   Updated: 2024/01/03 15:52:46 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	check_args(char **argv)
 		}
 		i++;
 	}
-	if (is_duplicated(argv))
+	if (is_duplicated(argv) || !argv[1][0])
 		return (0);
 	return (1);
 }
@@ -62,7 +62,6 @@ int	main(int ac, char **av)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-	t_stack	*tmp;
 
 	if (ac < 2)
 		return (0);
@@ -71,16 +70,10 @@ int	main(int ac, char **av)
 	stack_a = create_stack(ac, av);
 	if (is_sorted(stack_a) == 1)
 	{
-		printf("The stack is already sorted\n");
+		free_stack(&stack_a);
 		exit (EXIT_SUCCESS);
 	}
 	stack_b = NULL;
-	tmp = stack_a;
-	while (tmp)
-	{
-		printf("Number %d has index %i\n", tmp->value, tmp->index);
-		tmp = tmp->next;
-	}
 	push_swap(&stack_a, &stack_b);
 	free_stack(&stack_a);
 	free_stack(&stack_b);

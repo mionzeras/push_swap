@@ -6,7 +6,7 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 17:25:01 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/12/29 20:15:54 by gcampos-         ###   ########.fr       */
+/*   Updated: 2024/01/03 15:52:39 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ t_stack	*create_stack(int argc, char **argv)
 	{
 		nb = ft_atoi(argv[i]);
 		if (nb > INT_MAX || nb < INT_MIN)
-			exit_err(NULL, NULL);
+			exit_err(&sa, NULL);
 		if (i == 1)
 			sa = newstack((int)nb);
 		else

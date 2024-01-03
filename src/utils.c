@@ -6,13 +6,13 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 13:47:28 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/12/29 10:05:22 by gcampos-         ###   ########.fr       */
+/*   Updated: 2024/01/03 15:29:30 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	absolute(int n)
+int	absol(int n)
 {
 	if (n < 0)
 		return (-n);
@@ -64,10 +64,10 @@ int	is_duplicated(char **argv)
 	return (0);
 }
 
-int	ft_atoi(const char *str)
+long int	ft_atoi(const char *str)
 {
-	int	sign;
-	int	result;
+	int			sign;
+	long int	result;
 
 	sign = 1;
 	result = 0;
@@ -85,7 +85,7 @@ int	ft_atoi(const char *str)
 		result = result + (*str - '0');
 		str++;
 	}
-	return (result * sign);
+	return (sign * result);
 }
 
 void	ft_putstr(char *c)

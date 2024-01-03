@@ -6,7 +6,7 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 09:58:59 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/12/30 10:24:13 by gcampos-         ###   ########.fr       */
+/*   Updated: 2024/01/03 14:56:37 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,15 +53,15 @@ void	rotate_b(t_stack **b, int *cost_b)
 {
 	while (*cost_b)
 	{
-		if (*cost_b < 0)
+		if (*cost_b > 0)
+		{
+			rotate_move(NULL, b, "rb");
+			(*cost_b)--;
+		}
+		else if (*cost_b < 0)
 		{
 			rotate_move(NULL, b, "rrb");
 			(*cost_b)++;
-		}
-		else if (*cost_b > 0)
-		{
-			rotate_move(NULL, b, "rb");
-			(cost_b)--;
 		}
 	}
 }
@@ -77,9 +77,9 @@ void	pushing_to_a(t_stack **a, t_stack **b)
 	cheapest = INT_MAX;
 	while (sb)
 	{
-		if (absolute(sb->to_top_a) + absolute(sb->to_top_b) < absolute(cheapest))
+		if (absol(sb->to_top_a) + absol(sb->to_top_b) < absol(cheapest))
 		{
-			cheapest = absolute(sb->to_top_a) + absolute(sb->to_top_b);
+			cheapest = absol(sb->to_top_a) + absol(sb->to_top_b);
 			to_top_a = sb->to_top_a;
 			to_top_b = sb->to_top_b;
 		}
