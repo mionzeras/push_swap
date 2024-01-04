@@ -6,7 +6,7 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 13:47:28 by gcampos-          #+#    #+#             */
-/*   Updated: 2024/01/03 15:29:30 by gcampos-         ###   ########.fr       */
+/*   Updated: 2024/01/04 14:38:16 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,7 @@ int	is_duplicated(char **argv)
 		while (argv[j])
 		{
 			if (ft_atoi(argv[j]) == temp)
-			{
-				printf("duplicated number\n");
 				return (1);
-			}
 			j++;
 		}
 		i++;

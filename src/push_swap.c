@@ -6,7 +6,7 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 10:25:50 by gcampos-          #+#    #+#             */
-/*   Updated: 2024/01/03 15:52:46 by gcampos-         ###   ########.fr       */
+/*   Updated: 2024/01/04 14:38:55 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,7 @@ int	check_args(char **argv)
 	while (argv[i])
 	{
 		if (!is_numbers(argv[i]))
-		{
-			printf("the arguent must be numbers\n");
 			return (0);
-		}
 		i++;
 	}
 	if (is_duplicated(argv) || !argv[1][0])
