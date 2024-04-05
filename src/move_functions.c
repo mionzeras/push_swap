@@ -6,7 +6,7 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:09:16 by gcampos-          #+#    #+#             */
-/*   Updated: 2023/12/06 16:02:19 by gcampos-         ###   ########.fr       */
+/*   Updated: 2024/04/05 16:50:04 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void	reverse(t_stack **stack)
 	t_stack	*hold_last;
 
 	hold_bottom = *stack;
+	hold_last = NULL;
 	while (hold_bottom->next)
 	{
 		if (!hold_bottom->next->next)
