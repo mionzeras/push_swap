@@ -6,7 +6,7 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 17:25:01 by gcampos-          #+#    #+#             */
-/*   Updated: 2024/04/09 14:56:33 by gcampos-         ###   ########.fr       */
+/*   Updated: 2024/04/09 15:38:52 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,18 +25,15 @@ void	index_stack(t_stack **stack)
 		if (temp->index == -1)
 		{
 			min = is_min(temp);
-			if (temp->value == min && temp->index == -1)
+			if (temp->value == min)
 			{
 				temp->index = index;
 				index++;
 				temp = *stack;
-				continue;
+				continue ;
 			}
-			 else
-				temp = temp->next;
 		}
-		else
-			temp = temp->next;
+		temp = temp->next;
 	}
 }
 

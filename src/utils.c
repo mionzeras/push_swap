@@ -6,7 +6,7 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 13:47:28 by gcampos-          #+#    #+#             */
-/*   Updated: 2024/01/04 14:38:16 by gcampos-         ###   ########.fr       */
+/*   Updated: 2024/04/09 15:38:34 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,16 @@ int	absol(int n)
 
 int	is_numbers(char *num)
 {
-	int	i;
+	int			i;
+	long int	numb;
 
 	i = 0;
+	numb = ft_atoi(num);
+	if (numb > INT_MAX)
+	{
+		write(2, "Error\n", 6);
+		exit (1);
+	}
 	if (num[0] == '+' || num[0] == '-')
 	{
 		if (!num[i + 1])
@@ -63,8 +70,8 @@ int	is_duplicated(char **argv)
 
 long int	ft_atoi(const char *str)
 {
-	int			sign;
-	long int	result;
+	int				sign;
+	long long int	result;
 
 	sign = 1;
 	result = 0;
