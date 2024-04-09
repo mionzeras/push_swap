@@ -6,7 +6,7 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 17:25:01 by gcampos-          #+#    #+#             */
-/*   Updated: 2024/01/03 15:52:39 by gcampos-         ###   ########.fr       */
+/*   Updated: 2024/04/05 18:43:42 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,12 @@ void	index_stack(t_stack **stack)
 				temp->index = index;
 				index++;
 				temp = *stack;
+				continue;
 			}
-			else
-				temp = temp->next;
+			/* else
+				temp = temp->next;*/
 		}
-		else
+		//else
 			temp = temp->next;
 	}
 }
