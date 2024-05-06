@@ -6,7 +6,7 @@
 /*   By: gcampos- <gcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 17:25:01 by gcampos-          #+#    #+#             */
-/*   Updated: 2024/04/09 15:38:52 by gcampos-         ###   ########.fr       */
+/*   Updated: 2024/05/06 15:34:09 by gcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,24 +75,24 @@ void	stack_add_last(t_stack **stack, t_stack *new)
 
 t_stack	*create_stack(int argc, char **argv)
 {
-	t_stack		*sa;
+	t_stack		*stack_a;
 	long int	nb;
 	int			i;
 
-	sa = NULL;
+	stack_a = NULL;
 	nb = 0;
 	i = 1;
 	while (i < argc)
 	{
 		nb = ft_atoi(argv[i]);
 		if (nb > INT_MAX || nb < INT_MIN)
-			exit_err(&sa, NULL);
+			exit_err(&stack_a, NULL);
 		if (i == 1)
-			sa = newstack((int)nb);
+			stack_a = newstack((int)nb);
 		else
-			stack_add_last(&sa, newstack((int)nb));
+			stack_add_last(&stack_a, newstack((int)nb));
 		i++;
 	}
-	index_stack(&sa);
-	return (sa);
+	index_stack(&stack_a);
+	return (stack_a);
 }
