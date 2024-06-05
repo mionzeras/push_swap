@@ -1,5 +1,5 @@
 *.o
-push_swap_visualizer
+push_swap_visualizer/
 push_swap
 checker_linux
 .vscode
